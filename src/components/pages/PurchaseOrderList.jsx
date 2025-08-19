@@ -61,11 +61,11 @@ function PurchaseOrderList() {
   function applyFilters() {
     let filtered = [...purchaseOrders]
 
-    if (searchQuery.trim()) {
+if (searchQuery.trim()) {
       filtered = filtered.filter(po =>
-        po.poNumber.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        po.supplierName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        po.items.some(item => item.productName.toLowerCase().includes(searchQuery.toLowerCase()))
+        (po.poNumber || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (po.supplierName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (po.items || []).some(item => (item.productName || '').toLowerCase().includes(searchQuery.toLowerCase()))
       )
     }
 
@@ -134,12 +134,12 @@ function PurchaseOrderList() {
       )
     },
     {
-      key: 'supplier',
+key: 'supplier',
       label: 'Supplier',
       render: (po) => (
         <div>
-          <div className="font-medium text-gray-900">{po.supplierName}</div>
-          <div className="text-sm text-gray-500">{po.supplierEmail}</div>
+          <div className="font-medium text-gray-900">{po?.supplierName || 'No supplier name'}</div>
+          <div className="text-sm text-gray-500">{po?.supplierEmail || 'No email provided'}</div>
         </div>
       )
     },

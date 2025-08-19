@@ -35,8 +35,19 @@ const DataTable = ({
   })
 
 const renderCellValue = (value, column, row) => {
-    if (column.render) {
-      return column.render(value, row)
+    // Ensure row exists before passing to render function
+    if (column.render && row) {
+      try {
+        return column.render(value, row)
+      } catch (error) {
+        console.warn('DataTable render error:', error)
+        return <span className="text-red-500 text-sm">Render error</span>
+      }
+    }
+    
+    // Handle null/undefined values gracefully
+    if (value === null || value === undefined) {
+      return <span className="text-gray-400">-</span>
     }
     
     if (column.type === "badge") {
@@ -44,11 +55,16 @@ const renderCellValue = (value, column, row) => {
     }
     
     if (column.type === "currency") {
-      return `₹${Number(value).toLocaleString()}`
+      const numValue = Number(value) || 0
+      return `₹${numValue.toLocaleString()}`
     }
     
     if (column.type === "date") {
-      return new Date(value).toLocaleDateString()
+      try {
+        return new Date(value).toLocaleDateString()
+      } catch (error) {
+        return <span className="text-gray-400">Invalid date</span>
+      }
     }
     
     return value
