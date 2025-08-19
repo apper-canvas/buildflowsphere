@@ -14,8 +14,7 @@ import ChallanCreate from "@/components/pages/ChallanCreate"
 import InvoiceList from "@/components/pages/InvoiceList"
 import InvoiceCreate from '@/components/pages/InvoiceCreate'
 import CustomerList from '@/components/pages/CustomerList'
-import PurchaseOrderList from '@/services/api/PurchaseOrderList'
-
+import PurchaseOrderList from '@/components/pages/PurchaseOrderList'
 function App() {
   return (
     <Router>
