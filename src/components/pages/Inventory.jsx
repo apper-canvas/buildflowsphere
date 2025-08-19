@@ -248,13 +248,10 @@ async function handleGeneratePO(product) {
 
       {/* Inventory Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Card className="p-6">
+<Card className="p-6">
           <div className="flex items-center">
             <div className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg mr-4">
               <ApperIcon name="Package" size={24} className="text-primary" />
-}
-  }
-}
             </div>
           </div>
         </Card>
