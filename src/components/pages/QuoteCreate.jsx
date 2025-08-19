@@ -154,13 +154,12 @@ const handleQuantityChange = async (quantity) => {
         totalPrice: qty * prev.unitPrice
       }))
     }
-  } else {
+} else {
     setCurrentItem(prev => ({
       ...prev,
       quantity: qty,
       totalPrice: qty * prev.unitPrice
     }))
-}))
   }
 }
 

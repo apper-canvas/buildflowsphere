@@ -252,13 +252,8 @@ async function handleGeneratePO(product) {
           <div className="flex items-center">
             <div className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg mr-4">
               <ApperIcon name="Package" size={24} className="text-primary" />
-            </div>
-            <div>
 }
-
-// Add pricing rules navigation button to the existing component
-// This would need to be integrated into the actual component structure
-// based on where you want the pricing rules access to appear in the UI
+  }
 }
             </div>
           </div>
