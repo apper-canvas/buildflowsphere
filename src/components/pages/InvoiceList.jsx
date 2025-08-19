@@ -93,20 +93,29 @@ const InvoiceList = () => {
       key: "paymentStatus", 
       label: "Status", 
       sortable: true,
-      render: (value, invoice) => {
+render: (value, invoice) => {
         let variant = "default"
         let displayValue = value
+        
+        // Ensure invoice object exists and has required properties
+        if (!invoice) {
+          return <Badge variant="default">{value || "unknown"}</Badge>
+        }
         
         if (value === "paid") {
           variant = "success"
         } else if (value === "partial") {
           variant = "warning"
         } else if (value === "pending") {
-          // Check if overdue
-          const today = new Date().toISOString().split('T')[0]
-          if (invoice.dueDate < today) {
-            variant = "error"
-            displayValue = "overdue"
+          // Check if overdue - only if dueDate exists
+          if (invoice.dueDate) {
+            const today = new Date().toISOString().split('T')[0]
+            if (invoice.dueDate < today) {
+              variant = "error"
+              displayValue = "overdue"
+            } else {
+              variant = "warning"
+            }
           } else {
             variant = "warning"
           }
