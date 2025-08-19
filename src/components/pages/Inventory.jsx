@@ -254,8 +254,12 @@ async function handleGeneratePO(product) {
               <ApperIcon name="Package" size={24} className="text-primary" />
             </div>
             <div>
-              <p className="text-sm text-secondary">Total Products</p>
-              <p className="text-2xl font-bold text-gray-900">{products.length}</p>
+}
+
+// Add pricing rules navigation button to the existing component
+// This would need to be integrated into the actual component structure
+// based on where you want the pricing rules access to appear in the UI
+}
             </div>
           </div>
         </Card>

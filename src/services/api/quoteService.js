@@ -23,25 +23,44 @@ class QuoteService {
     return { ...quote }
   }
 
-  async create(quoteData) {
-    await this.delay()
-    const maxId = Math.max(...this.quotes.map(q => q.Id), 0)
-    const maxQuoteNumber = Math.max(
-      ...this.quotes.map(q => parseInt(q.quoteNumber.split('-').pop())), 
-      0
-    )
-    
-    const newQuote = {
-      ...quoteData,
-      Id: maxId + 1,
-      quoteNumber: `QT-2024-${String(maxQuoteNumber + 1).padStart(3, '0')}`,
-      status: "pending",
-      createdDate: new Date().toISOString().split('T')[0]
+async create(quoteData) {
+  await this.delay()
+  const maxId = Math.max(...this.quotes.map(q => q.Id), 0)
+  const maxQuoteNumber = Math.max(
+    ...this.quotes.map(q => parseInt(q.quoteNumber.split('-').pop())), 
+    0
+  )
+  
+  // Process items with applied pricing rules
+  const processedItems = []
+  for (const item of quoteData.items) {
+    const pricingInfo = item.pricingInfo || {
+      originalPrice: item.unitPrice,
+      finalPrice: item.unitPrice,
+      totalDiscount: 0,
+      appliedDiscounts: [],
+      savings: "0"
     }
     
-    this.quotes.push(newQuote)
-    return { ...newQuote }
+    processedItems.push({
+      ...item,
+      pricingInfo,
+      totalPrice: pricingInfo.finalPrice * item.quantity
+    })
   }
+  
+  const newQuote = {
+    ...quoteData,
+    Id: maxId + 1,
+    quoteNumber: `QT-2024-${String(maxQuoteNumber + 1).padStart(3, '0')}`,
+    items: processedItems,
+    status: "pending",
+    createdDate: new Date().toISOString().split('T')[0]
+  }
+  
+  this.quotes.push(newQuote)
+  return { ...newQuote }
+}
 
   async update(id, quoteData) {
     await this.delay()

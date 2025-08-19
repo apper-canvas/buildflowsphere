@@ -228,6 +228,53 @@ async getReorderSuggestion(productId) {
   }
 }
 
+async calculateOptimalPrice(productId, customerId, quantity = 1) {
+  await this.delay()
+  const product = this.products.find(p => p.Id === parseInt(productId))
+  if (!product) {
+    throw new Error("Product not found")
+  }
+
+  // Get base price from product pricing tiers
+  const basePrice = product.pricing.find(p => p.tier === "retail")?.pricePerUnit || product.pricing[0].pricePerUnit
+
+  // Import pricing rules service dynamically to avoid circular dependency
+  const { default: pricingRulesService } = await import('@/services/api/pricingRulesService')
+  return await pricingRulesService.calculateOptimalPrice(productId, customerId, quantity, basePrice)
+}
+
+async getPricingTiers(productId) {
+  await this.delay()
+  const product = this.products.find(p => p.Id === parseInt(productId))
+  if (!product) {
+    throw new Error("Product not found")
+  }
+  return [...product.pricing]
+}
+
+async updatePricingTier(productId, tier, priceData) {
+  await this.delay()
+  const product = this.products.find(p => p.Id === parseInt(productId))
+  if (!product) {
+    throw new Error("Product not found")
+  }
+  
+  const tierIndex = product.pricing.findIndex(p => p.tier === tier)
+  if (tierIndex >= 0) {
+    product.pricing[tierIndex] = { ...product.pricing[tierIndex], ...priceData }
+  } else {
+    product.pricing.push({ tier, ...priceData })
+  }
+  
+  return [...product.pricing]
+}
+
+async getVolumeBreakpoints(productId, customerId) {
+  await this.delay()
+  const { default: pricingRulesService } = await import('@/services/api/pricingRulesService')
+  return await pricingRulesService.getVolumeBreakpoints(productId, customerId)
+}
+
 async getAllBatches() {
   await this.delay()
   const allBatches = []

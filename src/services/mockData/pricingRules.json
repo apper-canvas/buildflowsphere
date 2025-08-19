@@ -1,0 +1,147 @@
+[
+  {
+    "Id": 1,
+    "name": "Volume Discount - Industrial Customers",
+    "description": "Tiered volume discounts for industrial customers on bulk orders",
+    "ruleType": "customer_tier",
+    "discountType": "volume",
+    "isActive": true,
+    "priority": 1,
+    "applicableProducts": [1, 2, 3, 4, 5],
+    "applicableCustomers": [1, 3, 5],
+    "customerTiers": ["wholesale", "industrial"],
+    "volumeBrackets": [
+      {
+        "minQuantity": 50,
+        "maxQuantity": 99,
+        "discountValue": 5,
+        "discountType": "percentage"
+      },
+      {
+        "minQuantity": 100,
+        "maxQuantity": 499,
+        "discountValue": 10,
+        "discountType": "percentage"
+      },
+      {
+        "minQuantity": 500,
+        "maxQuantity": null,
+        "discountValue": 15,
+        "discountType": "percentage"
+      }
+    ],
+    "validFrom": "2024-01-01",
+    "validUntil": "2024-12-31",
+    "createdDate": "2024-01-15",
+    "lastModified": "2024-01-15"
+  },
+  {
+    "Id": 2,
+    "name": "Premium Customer Special Rate",
+    "description": "Special pricing for premium customers",
+    "ruleType": "customer_specific",
+    "discountType": "customer_specific",
+    "isActive": true,
+    "priority": 2,
+    "applicableProducts": [1, 2, 3, 4, 5, 6, 7, 8],
+    "applicableCustomers": [2, 4],
+    "customerTiers": ["premium"],
+    "discountValue": {
+      "type": "percentage",
+      "value": 12
+    },
+    "minQuantity": 1,
+    "validFrom": "2024-01-01",
+    "validUntil": "2024-12-31",
+    "createdDate": "2024-01-10",
+    "lastModified": "2024-01-10"
+  },
+  {
+    "Id": 3,
+    "name": "Q1 2024 Promotional Campaign",
+    "description": "First quarter promotional discount on electronics",
+    "ruleType": "promotional",
+    "discountType": "promotional",
+    "isActive": true,
+    "priority": 3,
+    "applicableProducts": [1, 2, 7, 8],
+    "applicableCustomers": [],
+    "customerTiers": [],
+    "discountValue": {
+      "type": "percentage",
+      "value": 8
+    },
+    "minQuantity": 10,
+    "validFrom": "2024-01-01",
+    "validUntil": "2024-03-31",
+    "createdDate": "2024-01-01",
+    "lastModified": "2024-01-01"
+  },
+  {
+    "Id": 4,
+    "name": "New Customer Welcome Discount",
+    "description": "Welcome discount for first-time customers",
+    "ruleType": "promotional",
+    "discountType": "promotional",
+    "isActive": true,
+    "priority": 4,
+    "applicableProducts": [],
+    "applicableCustomers": [],
+    "customerTiers": ["new"],
+    "discountValue": {
+      "type": "fixed",
+      "value": 500
+    },
+    "minQuantity": 1,
+    "maxDiscount": 2000,
+    "validFrom": "2024-01-01",
+    "validUntil": "2024-12-31",
+    "createdDate": "2024-01-05",
+    "lastModified": "2024-01-05"
+  },
+  {
+    "Id": 5,
+    "name": "Seasonal Electronics Discount",
+    "description": "Seasonal discount on electronics and components",
+    "ruleType": "seasonal",
+    "discountType": "promotional",
+    "isActive": true,
+    "priority": 5,
+    "applicableProducts": [1, 2, 7, 8, 9, 10],
+    "applicableCustomers": [],
+    "customerTiers": [],
+    "discountValue": {
+      "type": "percentage",
+      "value": 6
+    },
+    "minQuantity": 5,
+    "validFrom": "2024-02-01",
+    "validUntil": "2024-02-29",
+    "createdDate": "2024-01-20",
+    "lastModified": "2024-01-20"
+  },
+  {
+    "Id": 6,
+    "name": "Bulk Order Incentive",
+    "description": "Additional discount for very large orders",
+    "ruleType": "global",
+    "discountType": "volume",
+    "isActive": true,
+    "priority": 6,
+    "applicableProducts": [],
+    "applicableCustomers": [],
+    "customerTiers": [],
+    "volumeBrackets": [
+      {
+        "minQuantity": 1000,
+        "maxQuantity": null,
+        "discountValue": 20,
+        "discountType": "percentage"
+      }
+    ],
+    "validFrom": "2024-01-01",
+    "validUntil": "2024-12-31",
+    "createdDate": "2024-01-01",
+    "lastModified": "2024-01-01"
+  }
+]
