@@ -10,15 +10,19 @@ const Sidebar = ({ isOpen, onClose }) => {
 const navigation = [
     { name: "Dashboard", href: "/", icon: "LayoutDashboard" },
     { name: "Quotes", href: "/quotes", icon: "FileText" },
+    { name: "Create Quote", href: "/quotes/create", icon: "FilePlus" },
     { name: "Sales Orders", href: "/orders", icon: "ShoppingCart" },
-{ name: "Inventory", href: "/inventory", icon: "Package" },
+    { name: "Inventory", href: "/inventory", icon: "Package" },
     { name: "Scanner", href: "/scanner", icon: "QrCode" },
     { name: "Batch Management", href: "/batch-management", icon: "Archive" },
     { name: "Dispatch", href: "/challans", icon: "Truck" },
+    { name: "Create Challan", href: "/challans/create", icon: "TruckPlus" },
     { name: "Invoices", href: "/invoices", icon: "Receipt" },
+    { name: "Create Invoice", href: "/invoices/create", icon: "ReceiptPlus" },
     { name: "Purchase Orders", href: "/purchase-orders", icon: "Clipboard" },
     { name: "Customers", href: "/customers", icon: "Users" },
     { name: "Vendors", href: "/vendors", icon: "Building2" },
+    { name: "Pricing Rules", href: "/pricing-rules", icon: "Calculator" },
     { name: "Reports", href: "/reports", icon: "BarChart3" },
   ]
 
