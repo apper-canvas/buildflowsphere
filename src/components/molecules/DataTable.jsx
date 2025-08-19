@@ -81,11 +81,11 @@ const renderCellValue = (value, column, row) => {
                   key={column.key}
                   className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors duration-200"
                   onClick={() => column.sortable && handleSort(column.key)}
-                >
+>
                   <div className="flex items-center space-x-1">
-                    <span>{column.label}</span>
+                    <span>{column.header}</span>
                     {column.sortable && sortColumn === column.key && (
-                      <ApperIcon 
+                      <ApperIcon
                         name={sortDirection === "asc" ? "ChevronUp" : "ChevronDown"} 
                         size={14}
                       />
