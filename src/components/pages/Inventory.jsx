@@ -11,6 +11,7 @@ import Empty from "@/components/ui/Empty"
 import ApperIcon from "@/components/ApperIcon"
 import productService from "@/services/api/productService"
 import { toast } from "react-toastify"
+import purchaseOrderService from '@/services/api/purchaseOrderService'
 
 const Inventory = () => {
   const navigate = useNavigate()
@@ -20,14 +21,25 @@ const Inventory = () => {
   const [error, setError] = useState("")
   const [categoryFilter, setCategoryFilter] = useState("all")
   const [statusFilter, setStatusFilter] = useState("all")
-
+const [lowStockItems, setLowStockItems] = useState([])
   const loadProducts = async () => {
     try {
       setLoading(true)
       setError("")
       const data = await productService.getAll()
-      setProducts(data)
+setProducts(data)
       setFilteredProducts(data)
+      
+      // Check for low stock and auto-generate POs if needed
+      const lowStock = data.filter(p => p.currentStock <= p.reorderLevel)
+      setLowStockItems(lowStock)
+      
+      // Auto-generate purchase orders for critically low stock
+      for (const product of lowStock) {
+        if (product.currentStock <= product.reorderLevel * 0.5) {
+          await handleAutoGeneratePO(product)
+        }
+      }
     } catch (err) {
       setError(err.message || "Failed to load inventory")
     } finally {
@@ -94,7 +106,45 @@ const Inventory = () => {
 
     setFilteredProducts(filtered)
   }
+async function handleGeneratePO(product) {
+    try {
+      await purchaseOrderService.generateFromProduct(product.Id)
+      toast.success(`Purchase order generated for ${product.name}`)
+      await loadProducts() // Refresh data
+    } catch (error) {
+      console.error("Error generating purchase order:", error)
+      toast.error("Failed to generate purchase order")
+    }
+  }
 
+  async function handleAutoGeneratePO(product) {
+    try {
+      const existingPOs = await purchaseOrderService.getAll()
+      const hasActivePO = existingPOs.some(po => 
+        po.items.some(item => item.productId === product.Id) && 
+        ['draft', 'sent', 'confirmed'].includes(po.status)
+      )
+      
+      if (!hasActivePO) {
+        await purchaseOrderService.generateFromProduct(product.Id)
+        toast.info(`Auto-generated purchase order for ${product.name}`)
+      }
+    } catch (error) {
+      console.error("Error auto-generating purchase order:", error)
+    }
+  }
+
+  function getStockStatusColor(product) {
+    if (product.currentStock <= product.reorderLevel * 0.5) return "bg-red-100 text-red-800"
+    if (product.currentStock <= product.reorderLevel) return "bg-yellow-100 text-yellow-800"
+    return "bg-green-100 text-green-800"
+  }
+
+  function getStockStatusText(product) {
+    if (product.currentStock <= product.reorderLevel * 0.5) return "Critical"
+    if (product.currentStock <= product.reorderLevel) return "Low Stock"
+    return "In Stock"
+  }
   const handleStockUpdate = async (product, operation, quantity) => {
     try {
       await productService.updateStock(product.Id, quantity, operation)

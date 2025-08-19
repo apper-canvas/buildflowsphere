@@ -13,7 +13,8 @@ const Sidebar = ({ isOpen, onClose }) => {
     { name: "Sales Orders", href: "/orders", icon: "ShoppingCart" },
     { name: "Inventory", href: "/inventory", icon: "Package" },
     { name: "Dispatch", href: "/challans", icon: "Truck" },
-    { name: "Invoices", href: "/invoices", icon: "Receipt" },
+{ name: "Invoices", href: "/invoices", icon: "Receipt" },
+    { name: "Purchase Orders", href: "/purchase-orders", icon: "Clipboard" },
     { name: "Customers", href: "/customers", icon: "Users" },
     { name: "Reports", href: "/reports", icon: "BarChart3" },
   ]

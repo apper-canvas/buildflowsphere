@@ -64,6 +64,38 @@ class ProductService {
   async getByCategory(category) {
     await this.delay()
     return this.products.filter(p => p.category === category)
+return this.products.filter(p => p.category === category)
+  }
+
+  async checkReorderPoints() {
+    await this.delay()
+    const lowStockProducts = this.products.filter(p => p.currentStock <= p.reorderLevel)
+    return lowStockProducts.map(product => ({
+      ...product,
+      suggestedOrderQuantity: Math.max(
+        product.reorderLevel * 2 - product.currentStock,
+        product.reorderLevel
+      )
+    }))
+  }
+
+  async getReorderSuggestion(productId) {
+    await this.delay()
+    const product = this.products.find(p => p.Id === parseInt(productId))
+    if (!product) {
+      throw new Error("Product not found")
+    }
+
+    const suggestedQuantity = Math.max(
+      product.reorderLevel * 2 - product.currentStock,
+      product.reorderLevel
+    )
+
+    return {
+      ...product,
+      suggestedOrderQuantity: suggestedQuantity,
+      estimatedCost: suggestedQuantity * product.pricing[0].pricePerUnit
+    }
   }
 }
 

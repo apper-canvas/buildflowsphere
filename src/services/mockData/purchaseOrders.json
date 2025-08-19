@@ -1,0 +1,86 @@
+[
+  {
+    "Id": 1,
+    "poNumber": "PO-2024-001",
+    "supplierId": 1,
+    "supplierName": "UltraTech Cement Ltd",
+    "supplierEmail": "orders@ultratech.com",
+    "supplierPhone": "+91-9876543210",
+    "status": "confirmed",
+    "orderDate": "2024-01-15T10:30:00Z",
+    "expectedDeliveryDate": "2024-01-22T10:00:00Z",
+    "items": [
+      {
+        "Id": 1,
+        "productId": 1,
+        "productName": "OPC 53 Grade Cement",
+        "quantity": 200,
+        "unitPrice": 350,
+        "totalPrice": 70000
+      }
+    ],
+    "subtotal": 70000,
+    "taxRate": 18,
+    "taxAmount": 12600,
+    "total": 82600,
+    "notes": "Urgent requirement for ongoing construction project",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "updatedAt": "2024-01-16T14:20:00Z"
+  },
+  {
+    "Id": 2,
+    "poNumber": "PO-2024-002",
+    "supplierId": 2,
+    "supplierName": "TATA Steel Corporation",
+    "supplierEmail": "procurement@tatasteel.com",
+    "supplierPhone": "+91-9876543211",
+    "status": "sent",
+    "orderDate": "2024-01-16T09:15:00Z",
+    "expectedDeliveryDate": "2024-01-25T10:00:00Z",
+    "items": [
+      {
+        "Id": 2,
+        "productId": 2,
+        "productName": "TMT Steel Bars 12mm",
+        "quantity": 500,
+        "unitPrice": 58,
+        "totalPrice": 29000
+      }
+    ],
+    "subtotal": 29000,
+    "taxRate": 18,
+    "taxAmount": 5220,
+    "total": 34220,
+    "notes": "Standard delivery schedule acceptable",
+    "createdAt": "2024-01-16T09:15:00Z",
+    "updatedAt": "2024-01-16T09:15:00Z"
+  },
+  {
+    "Id": 3,
+    "poNumber": "PO-2024-003",
+    "supplierId": 3,
+    "supplierName": "Local Sand Supplier",
+    "supplierEmail": "info@localsand.com",
+    "supplierPhone": "+91-9876543212",
+    "status": "draft",
+    "orderDate": "2024-01-17T11:45:00Z",
+    "expectedDeliveryDate": "2024-01-24T10:00:00Z",
+    "items": [
+      {
+        "Id": 3,
+        "productId": 3,
+        "productName": "M-Sand (Manufactured Sand)",
+        "quantity": 25,
+        "unitPrice": 1100,
+        "totalPrice": 27500
+      }
+    ],
+    "subtotal": 27500,
+    "taxRate": 5,
+    "taxAmount": 1375,
+    "total": 28875,
+    "notes": "Auto-generated based on reorder level",
+    "createdAt": "2024-01-17T11:45:00Z",
+    "updatedAt": "2024-01-17T11:45:00Z"
+  }
+]
