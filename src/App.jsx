@@ -11,10 +11,8 @@ import Inventory from "@/components/pages/Inventory"
 import ChallanList from "@/components/pages/ChallanList"
 import ChallanCreate from "@/components/pages/ChallanCreate"
 import InvoiceList from "@/components/pages/InvoiceList"
-import InvoiceCreate from "@/components/pages/InvoiceCreate"
-import CustomerList from "@/components/pages/CustomerList"
-import CustomerCreate from "@/components/pages/CustomerCreate"
-import Reports from "@/components/pages/Reports"
+import InvoiceCreate from '@/components/pages/InvoiceCreate'
+import CustomerList from '@/components/pages/CustomerList'
 
 function App() {
   return (
@@ -32,10 +30,8 @@ function App() {
             <Route path="challans" element={<ChallanList />} />
             <Route path="challans/create" element={<ChallanCreate />} />
             <Route path="invoices" element={<InvoiceList />} />
-            <Route path="invoices/create" element={<InvoiceCreate />} />
+<Route path="invoices/create" element={<InvoiceCreate />} />
             <Route path="customers" element={<CustomerList />} />
-            <Route path="customers/create" element={<CustomerCreate />} />
-            <Route path="reports" element={<Reports />} />
           </Route>
         </Routes>
         <ToastContainer
