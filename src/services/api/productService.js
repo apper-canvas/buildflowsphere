@@ -61,10 +61,9 @@ class ProductService {
     )
   }
 
-  async getByCategory(category) {
+async getByCategory(category) {
     await this.delay()
     return this.products.filter(p => p.category === category)
-return this.products.filter(p => p.category === category)
   }
 
   async checkReorderPoints() {
