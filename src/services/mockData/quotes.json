@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 1,
+    "customerId": 1,
+    "customerName": "ABC Construction Ltd",
+    "quoteNumber": "QT-2024-001",
+    "items": [
+      {
+        "productId": 1,
+        "productName": "OPC 53 Grade Cement",
+        "quantity": 100,
+        "unit": "Bags",
+        "unitPrice": 365,
+        "totalPrice": 36500
+      },
+      {
+        "productId": 2,
+        "productName": "TMT Steel Bars 12mm",
+        "quantity": 500,
+        "unit": "Pieces",
+        "unitPrice": 62,
+        "totalPrice": 31000
+      }
+    ],
+    "totalAmount": 67500,
+    "taxAmount": 12150,
+    "grandTotal": 79650,
+    "validUntil": "2024-03-15",
+    "status": "pending",
+    "createdBy": "Sales Manager",
+    "createdDate": "2024-03-01",
+    "notes": "Quote for Metro project Phase 1"
+  },
+  {
+    "Id": 2,
+    "customerId": 2,
+    "customerName": "Metro Builders Pvt Ltd",
+    "quoteNumber": "QT-2024-002",
+    "items": [
+      {
+        "productId": 3,
+        "productName": "M-Sand (Manufactured Sand)",
+        "quantity": 25,
+        "unit": "Tonnes",
+        "unitPrice": 1150,
+        "totalPrice": 28750
+      },
+      {
+        "productId": 4,
+        "productName": "20mm Aggregate Stone",
+        "quantity": 15,
+        "unit": "Tonnes",
+        "unitPrice": 1300,
+        "totalPrice": 19500
+      }
+    ],
+    "totalAmount": 48250,
+    "taxAmount": 8685,
+    "grandTotal": 56935,
+    "validUntil": "2024-03-20",
+    "status": "approved",
+    "createdBy": "Sales Manager",
+    "createdDate": "2024-03-02",
+    "notes": "Urgent requirement for foundation work"
+  },
+  {
+    "Id": 3,
+    "customerId": 3,
+    "customerName": "Skyline Constructions",
+    "quoteNumber": "QT-2024-003",
+    "items": [
+      {
+        "productId": 1,
+        "productName": "OPC 53 Grade Cement",
+        "quantity": 50,
+        "unit": "Bags",
+        "unitPrice": 380,
+        "totalPrice": 19000
+      }
+    ],
+    "totalAmount": 19000,
+    "taxAmount": 3420,
+    "grandTotal": 22420,
+    "validUntil": "2024-03-18",
+    "status": "pending",
+    "createdBy": "Sales Executive",
+    "createdDate": "2024-03-03",
+    "notes": "Small residential project requirement"
+  },
+  {
+    "Id": 4,
+    "customerId": 1,
+    "customerName": "ABC Construction Ltd",
+    "quoteNumber": "QT-2024-004",
+    "items": [
+      {
+        "productId": 5,
+        "productName": "PPC Cement (Portland Pozzolana)",
+        "quantity": 200,
+        "unit": "Bags",
+        "unitPrice": 320,
+        "totalPrice": 64000
+      },
+      {
+        "productId": 6,
+        "productName": "TMT Steel Bars 8mm",
+        "quantity": 1000,
+        "unit": "Pieces",
+        "unitPrice": 55,
+        "totalPrice": 55000
+      }
+    ],
+    "totalAmount": 119000,
+    "taxAmount": 21420,
+    "grandTotal": 140420,
+    "validUntil": "2024-03-25",
+    "status": "converted",
+    "createdBy": "Sales Manager",
+    "createdDate": "2024-03-04",
+    "notes": "Follow-up order for additional requirements"
+  }
+]

@@ -1,0 +1,126 @@
+[
+  {
+    "Id": 1,
+    "name": "OPC 53 Grade Cement",
+    "category": "Cement",
+    "baseUOM": "Bags",
+    "alternateUOMs": [
+      { "unit": "Bags", "conversionFactor": 1, "weight": 50 },
+      { "unit": "Tonnes", "conversionFactor": 0.05, "weight": 1000 }
+    ],
+    "reorderLevel": 100,
+    "currentStock": 850,
+    "pricing": [
+      { "tier": "retail", "pricePerUnit": 380, "minQuantity": 1 },
+      { "tier": "wholesale", "pricePerUnit": 365, "minQuantity": 50 },
+      { "tier": "bulk", "pricePerUnit": 350, "minQuantity": 200 }
+    ],
+    "brand": "UltraTech",
+    "specifications": "53 Grade OPC Cement, IS:12269 Certified",
+    "status": "active"
+  },
+  {
+    "Id": 2,
+    "name": "TMT Steel Bars 12mm",
+    "category": "Steel",
+    "baseUOM": "Pieces",
+    "alternateUOMs": [
+      { "unit": "Pieces", "conversionFactor": 1, "weight": 8.88 },
+      { "unit": "Tonnes", "conversionFactor": 0.00888, "weight": 1000 },
+      { "unit": "Bundles", "conversionFactor": 0.1, "weight": 88.8 }
+    ],
+    "reorderLevel": 200,
+    "currentStock": 1200,
+    "pricing": [
+      { "tier": "retail", "pricePerUnit": 65, "minQuantity": 1 },
+      { "tier": "wholesale", "pricePerUnit": 62, "minQuantity": 100 },
+      { "tier": "bulk", "pricePerUnit": 58, "minQuantity": 500 }
+    ],
+    "brand": "TATA Steel",
+    "specifications": "Fe-500D Grade, 12mm diameter, IS:1786 Certified",
+    "status": "active"
+  },
+  {
+    "Id": 3,
+    "name": "M-Sand (Manufactured Sand)",
+    "category": "Aggregates",
+    "baseUOM": "Tonnes",
+    "alternateUOMs": [
+      { "unit": "Tonnes", "conversionFactor": 1, "weight": 1000 },
+      { "unit": "Cubic Feet", "conversionFactor": 35.31, "weight": 28.32 },
+      { "unit": "Tractor Load", "conversionFactor": 0.25, "weight": 4000 }
+    ],
+    "reorderLevel": 50,
+    "currentStock": 125,
+    "pricing": [
+      { "tier": "retail", "pricePerUnit": 1200, "minQuantity": 1 },
+      { "tier": "wholesale", "pricePerUnit": 1150, "minQuantity": 10 },
+      { "tier": "bulk", "pricePerUnit": 1100, "minQuantity": 50 }
+    ],
+    "brand": "Local Supplier",
+    "specifications": "Zone II Grade, Conforming to IS:383",
+    "status": "active"
+  },
+  {
+    "Id": 4,
+    "name": "20mm Aggregate Stone",
+    "category": "Aggregates",
+    "baseUOM": "Tonnes",
+    "alternateUOMs": [
+      { "unit": "Tonnes", "conversionFactor": 1, "weight": 1000 },
+      { "unit": "Cubic Feet", "conversionFactor": 35.31, "weight": 28.32 },
+      { "unit": "Truck Load", "conversionFactor": 0.1, "weight": 10000 }
+    ],
+    "reorderLevel": 30,
+    "currentStock": 85,
+    "pricing": [
+      { "tier": "retail", "pricePerUnit": 1350, "minQuantity": 1 },
+      { "tier": "wholesale", "pricePerUnit": 1300, "minQuantity": 10 },
+      { "tier": "bulk", "pricePerUnit": 1250, "minQuantity": 30 }
+    ],
+    "brand": "Quarry Direct",
+    "specifications": "20mm Nominal Size, IS:383 Compliant",
+    "status": "active"
+  },
+  {
+    "Id": 5,
+    "name": "PPC Cement (Portland Pozzolana)",
+    "category": "Cement",
+    "baseUOM": "Bags",
+    "alternateUOMs": [
+      { "unit": "Bags", "conversionFactor": 1, "weight": 50 },
+      { "unit": "Tonnes", "conversionFactor": 0.05, "weight": 1000 }
+    ],
+    "reorderLevel": 150,
+    "currentStock": 95,
+    "pricing": [
+      { "tier": "retail", "pricePerUnit": 340, "minQuantity": 1 },
+      { "tier": "wholesale", "pricePerUnit": 330, "minQuantity": 50 },
+      { "tier": "bulk", "pricePerUnit": 320, "minQuantity": 200 }
+    ],
+    "brand": "ACC",
+    "specifications": "PPC Grade, IS:1489 Part 1 Certified",
+    "status": "low_stock"
+  },
+  {
+    "Id": 6,
+    "name": "TMT Steel Bars 8mm",
+    "category": "Steel",
+    "baseUOM": "Pieces",
+    "alternateUOMs": [
+      { "unit": "Pieces", "conversionFactor": 1, "weight": 3.95 },
+      { "unit": "Tonnes", "conversionFactor": 0.00395, "weight": 1000 },
+      { "unit": "Bundles", "conversionFactor": 0.05, "weight": 79 }
+    ],
+    "reorderLevel": 300,
+    "currentStock": 1850,
+    "pricing": [
+      { "tier": "retail", "pricePerUnit": 62, "minQuantity": 1 },
+      { "tier": "wholesale", "pricePerUnit": 59, "minQuantity": 100 },
+      { "tier": "bulk", "pricePerUnit": 55, "minQuantity": 500 }
+    ],
+    "brand": "JSW Steel",
+    "specifications": "Fe-500D Grade, 8mm diameter, IS:1786 Certified",
+    "status": "active"
+  }
+]

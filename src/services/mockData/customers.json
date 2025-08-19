@@ -1,0 +1,93 @@
+[
+  {
+    "Id": 1,
+    "name": "ABC Construction Ltd",
+    "creditLimit": 500000,
+    "outstandingAmount": 125000,
+    "contactPerson": "Rajesh Kumar",
+    "phone": "+91-9876543210",
+    "email": "rajesh@abcconstruction.com",
+    "gstNumber": "27AABCU1234M1ZX",
+    "addresses": [
+      {
+        "type": "billing",
+        "address": "123 Industrial Area, Phase 1",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "pincode": "400001"
+      },
+      {
+        "type": "delivery",
+        "address": "Site Office, New Metro Project",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "pincode": "400002"
+      }
+    ],
+    "createdDate": "2024-01-15",
+    "status": "active"
+  },
+  {
+    "Id": 2,
+    "name": "Metro Builders Pvt Ltd",
+    "creditLimit": 750000,
+    "outstandingAmount": 280000,
+    "contactPerson": "Priya Sharma",
+    "phone": "+91-9876543211",
+    "email": "priya@metrobuilders.com",
+    "gstNumber": "27AABCM5678P1ZY",
+    "addresses": [
+      {
+        "type": "billing",
+        "address": "456 Business Park, Sector 15",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "pincode": "400003"
+      }
+    ],
+    "createdDate": "2024-01-20",
+    "status": "active"
+  },
+  {
+    "Id": 3,
+    "name": "Skyline Constructions",
+    "creditLimit": 300000,
+    "outstandingAmount": 45000,
+    "contactPerson": "Amit Patel",
+    "phone": "+91-9876543212",
+    "email": "amit@skylineconstructions.com",
+    "gstNumber": "27AABCS9012Q1ZZ",
+    "addresses": [
+      {
+        "type": "billing",
+        "address": "789 Construction Lane",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "pincode": "400004"
+      }
+    ],
+    "createdDate": "2024-02-01",
+    "status": "active"
+  },
+  {
+    "Id": 4,
+    "name": "Reliable Infrastructure",
+    "creditLimit": 1000000,
+    "outstandingAmount": 150000,
+    "contactPerson": "Suresh Gupta",
+    "phone": "+91-9876543213",
+    "email": "suresh@reliableinfra.com",
+    "gstNumber": "27AABCR3456S1ZW",
+    "addresses": [
+      {
+        "type": "billing",
+        "address": "321 Highway Project Office",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "pincode": "400005"
+      }
+    ],
+    "createdDate": "2024-02-10",
+    "status": "active"
+  }
+]

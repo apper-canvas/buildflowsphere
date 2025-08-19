@@ -1,0 +1,89 @@
+[
+  {
+    "Id": 1,
+    "challanNumber": "DC-2024-001",
+    "orderId": 3,
+    "orderNumber": "SO-2024-003",
+    "customerId": 4,
+    "customerName": "Reliable Infrastructure",
+    "items": [
+      {
+        "productId": 1,
+        "productName": "OPC 53 Grade Cement",
+        "orderedQuantity": 300,
+        "dispatchedQuantity": 300,
+        "unit": "Bags"
+      },
+      {
+        "productId": 2,
+        "productName": "TMT Steel Bars 12mm",
+        "orderedQuantity": 800,
+        "dispatchedQuantity": 800,
+        "unit": "Pieces"
+      }
+    ],
+    "vehicleNumber": "MH-12-AB-1234",
+    "driverName": "Ramesh Singh",
+    "driverPhone": "+91-9876543220",
+    "dispatchTime": "2024-03-05T08:30:00",
+    "expectedDelivery": "2024-03-05T14:00:00",
+    "status": "delivered",
+    "deliveredTime": "2024-03-05T13:45:00",
+    "receivedBy": "Site Engineer",
+    "eWayBillNumber": "EWB123456789012",
+    "createdBy": "Dispatch Manager",
+    "notes": "Complete order dispatched in single trip"
+  },
+  {
+    "Id": 2,
+    "challanNumber": "DC-2024-002",
+    "orderId": 1,
+    "orderNumber": "SO-2024-001",
+    "customerId": 2,
+    "customerName": "Metro Builders Pvt Ltd",
+    "items": [
+      {
+        "productId": 3,
+        "productName": "M-Sand (Manufactured Sand)",
+        "orderedQuantity": 25,
+        "dispatchedQuantity": 15,
+        "unit": "Tonnes"
+      }
+    ],
+    "vehicleNumber": "MH-12-CD-5678",
+    "driverName": "Suresh Yadav",
+    "driverPhone": "+91-9876543221",
+    "dispatchTime": "2024-03-06T09:15:00",
+    "expectedDelivery": "2024-03-06T15:30:00",
+    "status": "in_transit",
+    "eWayBillNumber": "EWB123456789013",
+    "createdBy": "Dispatch Manager",
+    "notes": "Partial dispatch - remaining quantity to follow"
+  },
+  {
+    "Id": 3,
+    "challanNumber": "DC-2024-003",
+    "orderId": 2,
+    "orderNumber": "SO-2024-002",
+    "customerId": 1,
+    "customerName": "ABC Construction Ltd",
+    "items": [
+      {
+        "productId": 5,
+        "productName": "PPC Cement (Portland Pozzolana)",
+        "orderedQuantity": 200,
+        "dispatchedQuantity": 100,
+        "unit": "Bags"
+      }
+    ],
+    "vehicleNumber": "MH-12-EF-9012",
+    "driverName": "Vijay Kumar",
+    "driverPhone": "+91-9876543222",
+    "dispatchTime": "2024-03-07T07:45:00",
+    "expectedDelivery": "2024-03-07T13:00:00",
+    "status": "dispatched",
+    "eWayBillNumber": "EWB123456789014",
+    "createdBy": "Dispatch Executive",
+    "notes": "First installment - balance to be dispatched tomorrow"
+  }
+]

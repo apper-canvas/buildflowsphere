@@ -1,0 +1,117 @@
+[
+  {
+    "Id": 1,
+    "invoiceNumber": "INV-2024-001",
+    "orderId": 3,
+    "orderNumber": "SO-2024-003",
+    "challanId": 1,
+    "challanNumber": "DC-2024-001",
+    "customerId": 4,
+    "customerName": "Reliable Infrastructure",
+    "items": [
+      {
+        "productId": 1,
+        "productName": "OPC 53 Grade Cement",
+        "quantity": 300,
+        "unit": "Bags",
+        "unitPrice": 350,
+        "totalPrice": 105000
+      },
+      {
+        "productId": 2,
+        "productName": "TMT Steel Bars 12mm",
+        "quantity": 800,
+        "unit": "Pieces",
+        "unitPrice": 58,
+        "totalPrice": 46400
+      }
+    ],
+    "subtotal": 151400,
+    "cgstRate": 9,
+    "sgstRate": 9,
+    "cgstAmount": 13626,
+    "sgstAmount": 13626,
+    "totalTaxAmount": 27252,
+    "grandTotal": 178652,
+    "invoiceDate": "2024-03-05",
+    "dueDate": "2024-05-04",
+    "paymentTerms": "60 days",
+    "paymentStatus": "paid",
+    "paidAmount": 178652,
+    "paidDate": "2024-04-20",
+    "paymentMethod": "bank_transfer",
+    "createdBy": "Accounts Manager",
+    "gstNumber": "27AABCR3456S1ZW",
+    "notes": "Payment received ahead of due date"
+  },
+  {
+    "Id": 2,
+    "invoiceNumber": "INV-2024-002",
+    "orderId": 1,
+    "orderNumber": "SO-2024-001",
+    "challanId": 2,
+    "challanNumber": "DC-2024-002",
+    "customerId": 2,
+    "customerName": "Metro Builders Pvt Ltd",
+    "items": [
+      {
+        "productId": 3,
+        "productName": "M-Sand (Manufactured Sand)",
+        "quantity": 15,
+        "unit": "Tonnes",
+        "unitPrice": 1150,
+        "totalPrice": 17250
+      }
+    ],
+    "subtotal": 17250,
+    "cgstRate": 9,
+    "sgstRate": 9,
+    "cgstAmount": 1552.5,
+    "sgstAmount": 1552.5,
+    "totalTaxAmount": 3105,
+    "grandTotal": 20355,
+    "invoiceDate": "2024-03-06",
+    "dueDate": "2024-04-05",
+    "paymentTerms": "30 days",
+    "paymentStatus": "pending",
+    "paidAmount": 0,
+    "createdBy": "Accounts Executive",
+    "gstNumber": "27AABCM5678P1ZY",
+    "notes": "Partial delivery invoice - balance to follow"
+  },
+  {
+    "Id": 3,
+    "invoiceNumber": "INV-2024-003",
+    "orderId": 2,
+    "orderNumber": "SO-2024-002",
+    "challanId": 3,
+    "challanNumber": "DC-2024-003",
+    "customerId": 1,
+    "customerName": "ABC Construction Ltd",
+    "items": [
+      {
+        "productId": 5,
+        "productName": "PPC Cement (Portland Pozzolana)",
+        "quantity": 100,
+        "unit": "Bags",
+        "unitPrice": 320,
+        "totalPrice": 32000
+      }
+    ],
+    "subtotal": 32000,
+    "cgstRate": 9,
+    "sgstRate": 9,
+    "cgstAmount": 2880,
+    "sgstAmount": 2880,
+    "totalTaxAmount": 5760,
+    "grandTotal": 37760,
+    "invoiceDate": "2024-03-07",
+    "dueDate": "2024-04-21",
+    "paymentTerms": "45 days",
+    "paymentStatus": "overdue",
+    "paidAmount": 0,
+    "createdBy": "Accounts Executive",
+    "gstNumber": "27AABCU1234M1ZX",
+    "notes": "First installment invoice - follow up required"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "Id": 1,
+    "orderId": "SO-2024-001",
+    "quoteId": 2,
+    "customerId": 2,
+    "customerName": "Metro Builders Pvt Ltd",
+    "items": [
+      {
+        "productId": 3,
+        "productName": "M-Sand (Manufactured Sand)",
+        "quantity": 25,
+        "unit": "Tonnes",
+        "unitPrice": 1150,
+        "totalPrice": 28750
+      },
+      {
+        "productId": 4,
+        "productName": "20mm Aggregate Stone",
+        "quantity": 15,
+        "unit": "Tonnes",
+        "unitPrice": 1300,
+        "totalPrice": 19500
+      }
+    ],
+    "totalAmount": 48250,
+    "taxAmount": 8685,
+    "grandTotal": 56935,
+    "status": "confirmed",
+    "orderDate": "2024-03-02",
+    "deliveryDate": "2024-03-08",
+    "paymentTerms": "30 days",
+    "deliveryAddress": "Site Office, New Metro Project, Mumbai - 400002",
+    "createdBy": "Sales Manager",
+    "notes": "Priority delivery required for foundation work"
+  },
+  {
+    "Id": 2,
+    "orderId": "SO-2024-002",
+    "quoteId": 4,
+    "customerId": 1,
+    "customerName": "ABC Construction Ltd",
+    "items": [
+      {
+        "productId": 5,
+        "productName": "PPC Cement (Portland Pozzolana)",
+        "quantity": 200,
+        "unit": "Bags",
+        "unitPrice": 320,
+        "totalPrice": 64000
+      },
+      {
+        "productId": 6,
+        "productName": "TMT Steel Bars 8mm",
+        "quantity": 1000,
+        "unit": "Pieces",
+        "unitPrice": 55,
+        "totalPrice": 55000
+      }
+    ],
+    "totalAmount": 119000,
+    "taxAmount": 21420,
+    "grandTotal": 140420,
+    "status": "in_progress",
+    "orderDate": "2024-03-04",
+    "deliveryDate": "2024-03-10",
+    "paymentTerms": "45 days",
+    "deliveryAddress": "Site Office, New Metro Project, Mumbai - 400002",
+    "createdBy": "Sales Manager",
+    "notes": "Bulk order with extended payment terms"
+  },
+  {
+    "Id": 3,
+    "orderId": "SO-2024-003",
+    "quoteId": null,
+    "customerId": 4,
+    "customerName": "Reliable Infrastructure",
+    "items": [
+      {
+        "productId": 1,
+        "productName": "OPC 53 Grade Cement",
+        "quantity": 300,
+        "unit": "Bags",
+        "unitPrice": 350,
+        "totalPrice": 105000
+      },
+      {
+        "productId": 2,
+        "productName": "TMT Steel Bars 12mm",
+        "quantity": 800,
+        "unit": "Pieces",
+        "unitPrice": 58,
+        "totalPrice": 46400
+      }
+    ],
+    "totalAmount": 151400,
+    "taxAmount": 27252,
+    "grandTotal": 178652,
+    "status": "dispatched",
+    "orderDate": "2024-03-01",
+    "deliveryDate": "2024-03-05",
+    "paymentTerms": "60 days",
+    "deliveryAddress": "Highway Project Office, Mumbai - 400005",
+    "createdBy": "Branch Manager",
+    "notes": "Direct order from regular customer"
+  }
+]
