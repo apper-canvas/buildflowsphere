@@ -6,16 +6,16 @@ import Badge from "@/components/atoms/Badge"
 import DataTable from "@/components/molecules/DataTable"
 import SearchBar from "@/components/molecules/SearchBar"
 import FormField from "@/components/molecules/FormField"
+import BarcodeScanner from "@/components/molecules/BarcodeScanner"
 import Loading from "@/components/ui/Loading"
 import Error from "@/components/ui/Error"
 import Empty from "@/components/ui/Empty"
 import ApperIcon from "@/components/ApperIcon"
 import productService from "@/services/api/productService"
 import { toast } from "react-toastify"
-
 const BatchManagement = () => {
   const navigate = useNavigate()
-  const [batches, setBatches] = useState([])
+const [batches, setBatches] = useState([])
   const [filteredBatches, setFilteredBatches] = useState([])
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -23,7 +23,7 @@ const BatchManagement = () => {
   const [showCreateModal, setShowCreateModal] = useState(false)
   const [selectedProduct, setSelectedProduct] = useState("")
   const [expiringBatches, setExpiringBatches] = useState([])
-
+  const [showScanner, setShowScanner] = useState(false)
   const [newBatch, setNewBatch] = useState({
     batchNumber: "",
     manufacturingDate: "",
@@ -107,7 +107,40 @@ const BatchManagement = () => {
       toast.error(err.message || "Failed to create batch")
     }
   }
-
+// Handle batch barcode scan
+  const handleBatchScan = async (code) => {
+    setShowScanner(false)
+    
+    try {
+      // Search for batch by code
+      const searchResults = await productService.searchBatches(code)
+      
+      if (searchResults && searchResults.length > 0) {
+        const batch = searchResults[0]
+        toast.success(`Batch found: ${batch.batchNumber} - ${batch.productName}`)
+        
+        // Filter to show only the scanned batch
+        setFilteredBatches([batch])
+        
+        // Highlight the batch
+        setTimeout(() => {
+          const element = document.getElementById(`batch-${batch.Id}`)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+            element.classList.add('bg-blue-50', 'border-blue-200')
+            setTimeout(() => {
+              element.classList.remove('bg-blue-50', 'border-blue-200')
+            }, 3000)
+          }
+        }, 100)
+      } else {
+        toast.error(`Batch not found for code: ${code}`)
+      }
+    } catch (error) {
+      console.error('Error searching batch:', error)
+      toast.error('Error searching for batch')
+    }
+  }
   const getExpiryStatus = (expiryDate) => {
     const today = new Date()
     const expiry = new Date(expiryDate)
@@ -282,15 +315,21 @@ const BatchManagement = () => {
 
   return (
     <div className="p-6 space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Batch Management</h1>
           <p className="text-gray-600">Track and manage product batches and expiry dates</p>
         </div>
-        <Button onClick={() => setShowCreateModal(true)}>
-          <ApperIcon name="Plus" size={16} className="mr-2" />
-          Create Batch
-        </Button>
+        <div className="flex items-center space-x-3 mt-4 sm:mt-0">
+          <Button variant="outline" onClick={() => setShowScanner(true)}>
+            <ApperIcon name="QrCode" size={16} className="mr-2" />
+            Scan Batch
+          </Button>
+          <Button onClick={() => setShowCreateModal(true)}>
+            <ApperIcon name="Plus" size={16} className="mr-2" />
+            Create Batch
+          </Button>
+        </div>
       </div>
 
       {/* Quick Stats */}
@@ -359,7 +398,15 @@ const BatchManagement = () => {
           </div>
         </div>
       </Card>
-
+{/* Batch Scanner Modal */}
+      {showScanner && (
+        <BarcodeScanner
+          title="Scan Batch Barcode"
+          placeholder="Position batch barcode in the frame"
+          onScan={handleBatchScan}
+          onClose={() => setShowScanner(false)}
+        />
+      )}
       {/* Expiring Batches Alert */}
       {expiringBatches.length > 0 && (
         <Card className="p-4 border-l-4 border-l-warning bg-warning/5">
@@ -397,7 +444,7 @@ const BatchManagement = () => {
       </Card>
 
       {showCreateModal && <CreateBatchModal />}
-    </div>
+</div>
   )
 }
 

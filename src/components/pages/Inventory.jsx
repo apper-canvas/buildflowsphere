@@ -7,6 +7,7 @@ import Empty from "@/components/ui/Empty";
 import Loading from "@/components/ui/Loading";
 import SearchBar from "@/components/molecules/SearchBar";
 import DataTable from "@/components/molecules/DataTable";
+import BarcodeScanner from "@/components/molecules/BarcodeScanner";
 import Button from "@/components/atoms/Button";
 import Badge from "@/components/atoms/Badge";
 import Card from "@/components/atoms/Card";
@@ -15,13 +16,14 @@ import purchaseOrderService from "@/services/api/purchaseOrderService";
 
 const Inventory = () => {
   const navigate = useNavigate()
-  const [products, setProducts] = useState([])
+const [products, setProducts] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
   const [categoryFilter, setCategoryFilter] = useState("all")
   const [statusFilter, setStatusFilter] = useState("all")
-const [lowStockItems, setLowStockItems] = useState([])
+  const [lowStockItems, setLowStockItems] = useState([])
+  const [showScanner, setShowScanner] = useState(false)
   const loadProducts = async () => {
     try {
       setLoading(true)
@@ -154,7 +156,40 @@ async function handleGeneratePO(product) {
       toast.error(err.message || "Failed to update stock")
     }
   }
-
+// Handle barcode scan result
+  const handleScanResult = async (code) => {
+    setShowScanner(false)
+    
+    try {
+      // Search for product by code/barcode
+      const searchResults = await productService.search(code)
+      
+      if (searchResults && searchResults.length > 0) {
+        const product = searchResults[0]
+        toast.success(`Product found: ${product.name}`)
+        
+        // Filter to show only the scanned product
+        setFilteredProducts([product])
+        
+        // Optionally scroll to the product or highlight it
+        setTimeout(() => {
+          const element = document.getElementById(`product-${product.Id}`)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+            element.classList.add('bg-yellow-50', 'border-yellow-200')
+            setTimeout(() => {
+              element.classList.remove('bg-yellow-50', 'border-yellow-200')
+            }, 3000)
+          }
+        }, 100)
+      } else {
+        toast.error(`Product not found for code: ${code}`)
+      }
+    } catch (error) {
+      console.error('Error searching product:', error)
+      toast.error('Error searching for product')
+    }
+  }
   if (loading) return <Loading />
   if (error) return <Error message={error} onRetry={loadProducts} />
 
@@ -238,7 +273,11 @@ async function handleGeneratePO(product) {
           <h1 className="text-2xl font-display font-bold text-gray-900">Inventory Management</h1>
           <p className="text-secondary mt-1">Track stock levels and manage inventory</p>
         </div>
-        <div className="flex items-center space-x-3">
+<div className="flex items-center space-x-3">
+          <Button variant="outline" onClick={() => setShowScanner(true)}>
+            <ApperIcon name="QrCode" size={16} className="mr-2" />
+            Scan Product
+          </Button>
           <Button variant="accent" onClick={() => navigate('/reports')}>
             <ApperIcon name="BarChart3" size={16} className="mr-2" />
             Inventory Reports
@@ -292,7 +331,15 @@ async function handleGeneratePO(product) {
           </div>
         </Card>
       </div>
-
+{/* Barcode Scanner Modal */}
+      {showScanner && (
+        <BarcodeScanner
+          title="Scan Product Barcode"
+          placeholder="Position product barcode in the frame"
+          onScan={handleScanResult}
+          onClose={() => setShowScanner(false)}
+        />
+      )}
       {/* Filters and Search */}
       <Card className="p-6">
         <div className="space-y-4">
@@ -389,7 +436,7 @@ async function handleGeneratePO(product) {
           onAction={() => toast.info("Product management coming soon!")}
         />
       )}
-    </div>
+</div>
   )
 }
 

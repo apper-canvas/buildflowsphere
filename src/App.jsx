@@ -8,6 +8,7 @@ import QuoteEdit from "@/components/pages/QuoteEdit"
 import OrderList from "@/components/pages/OrderList"
 import OrderDetails from "@/components/pages/OrderDetails"
 import Inventory from "@/components/pages/Inventory"
+import Scanner from "@/components/pages/Scanner"
 import BatchManagement from "@/components/pages/BatchManagement"
 import ChallanList from "@/components/pages/ChallanList"
 import ChallanCreate from "@/components/pages/ChallanCreate"
@@ -28,6 +29,7 @@ function App() {
             <Route path="orders" element={<OrderList />} />
 <Route path="orders/:id" element={<OrderDetails />} />
             <Route path="inventory" element={<Inventory />} />
+            <Route path="scanner" element={<Scanner />} />
             <Route path="batch-management" element={<BatchManagement />} />
             <Route path="challans" element={<ChallanList />} />
             <Route path="challans/create" element={<ChallanCreate />} />
