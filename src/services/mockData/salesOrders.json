@@ -3,7 +3,7 @@
     "Id": 1,
     "orderId": "SO-2024-001",
     "quoteId": 2,
-    "customerId": 2,
+"customerId": 2,
     "customerName": "Metro Builders Pvt Ltd",
     "items": [
       {
@@ -12,7 +12,10 @@
         "quantity": 25,
         "unit": "Tonnes",
         "unitPrice": 1150,
-        "totalPrice": 28750
+        "totalPrice": 28750,
+        "batchId": 5,
+        "batchNumber": "MSAND-2024-001",
+        "expiryDate": "2024-07-25"
       },
       {
         "productId": 4,
@@ -20,7 +23,10 @@
         "quantity": 15,
         "unit": "Tonnes",
         "unitPrice": 1300,
-        "totalPrice": 19500
+        "totalPrice": 19500,
+        "batchId": 7,
+        "batchNumber": "AGG20-2024-001",
+        "expiryDate": "2024-07-20"
       }
     ],
     "totalAmount": 48250,
@@ -38,7 +44,7 @@
     "Id": 2,
     "orderId": "SO-2024-002",
     "quoteId": 4,
-    "customerId": 1,
+"customerId": 1,
     "customerName": "ABC Construction Ltd",
     "items": [
       {
@@ -47,7 +53,10 @@
         "quantity": 200,
         "unit": "Bags",
         "unitPrice": 320,
-        "totalPrice": 64000
+        "totalPrice": 64000,
+        "batchId": 9,
+        "batchNumber": "ACC-PPC-2024-001",
+        "expiryDate": "2025-01-08"
       },
       {
         "productId": 6,
@@ -55,7 +64,10 @@
         "quantity": 1000,
         "unit": "Pieces",
         "unitPrice": 55,
-        "totalPrice": 55000
+        "totalPrice": 55000,
+        "batchId": 10,
+        "batchNumber": "JSW-TMT8-2024-001",
+        "expiryDate": "2029-01-12"
       }
     ],
     "totalAmount": 119000,
@@ -73,7 +85,7 @@
     "Id": 3,
     "orderId": "SO-2024-003",
     "quoteId": null,
-    "customerId": 4,
+"customerId": 4,
     "customerName": "Reliable Infrastructure",
     "items": [
       {
@@ -82,7 +94,10 @@
         "quantity": 300,
         "unit": "Bags",
         "unitPrice": 350,
-        "totalPrice": 105000
+        "totalPrice": 105000,
+        "batchId": 1,
+        "batchNumber": "UT-OPC53-2024-001",
+        "expiryDate": "2025-01-15"
       },
       {
         "productId": 2,
@@ -90,7 +105,10 @@
         "quantity": 800,
         "unit": "Pieces",
         "unitPrice": 58,
-        "totalPrice": 46400
+        "totalPrice": 46400,
+        "batchId": 3,
+        "batchNumber": "TATA-TMT12-2024-001",
+        "expiryDate": "2029-01-10"
       }
     ],
     "totalAmount": 151400,

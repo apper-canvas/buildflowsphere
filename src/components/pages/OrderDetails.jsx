@@ -132,10 +132,11 @@ const OrderDetails = () => {
           <Card>
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Order Items</h2>
             <div className="overflow-x-auto">
-              <table className="w-full">
+<table className="w-full">
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-4 py-2 text-left text-sm font-medium text-gray-500">Product</th>
+                    <th className="px-4 py-2 text-left text-sm font-medium text-gray-500">Batch Info</th>
                     <th className="px-4 py-2 text-right text-sm font-medium text-gray-500">Quantity</th>
                     <th className="px-4 py-2 text-center text-sm font-medium text-gray-500">Unit</th>
                     <th className="px-4 py-2 text-right text-sm font-medium text-gray-500">Unit Price</th>
@@ -145,7 +146,23 @@ const OrderDetails = () => {
                 <tbody className="divide-y divide-gray-200">
                   {order.items.map((item, index) => (
                     <tr key={index}>
-                      <td className="px-4 py-2 text-sm text-gray-900">{item.productName}</td>
+                      <td className="px-4 py-2">
+                        <div>
+                          <div className="text-sm font-medium text-gray-900">{item.productName}</div>
+                        </div>
+                      </td>
+                      <td className="px-4 py-2">
+                        {item.batchNumber ? (
+                          <div className="text-xs space-y-1">
+                            <div className="font-medium text-gray-700">Batch: {item.batchNumber}</div>
+                            <div className="text-gray-500">
+                              Expiry: {new Date(item.expiryDate).toLocaleDateString()}
+                            </div>
+                          </div>
+                        ) : (
+                          <span className="text-xs text-gray-400">No batch info</span>
+                        )}
+                      </td>
                       <td className="px-4 py-2 text-sm text-gray-900 text-right">{item.quantity}</td>
                       <td className="px-4 py-2 text-sm text-gray-900 text-center">{item.unit}</td>
                       <td className="px-4 py-2 text-sm text-gray-900 text-right">₹{item.unitPrice.toLocaleString()}</td>

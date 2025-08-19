@@ -23,35 +23,53 @@ class SalesOrderService {
     return { ...order }
   }
 
-  async create(orderData) {
-    await this.delay()
-    const maxId = Math.max(...this.salesOrders.map(o => o.Id), 0)
-    const maxOrderNumber = Math.max(
-      ...this.salesOrders.map(o => parseInt(o.orderId.split('-').pop())), 
-      0
-    )
-    
-    const newOrder = {
-      ...orderData,
-      Id: maxId + 1,
-      orderId: `SO-2024-${String(maxOrderNumber + 1).padStart(3, '0')}`,
-      status: "confirmed",
-      orderDate: new Date().toISOString().split('T')[0]
-    }
-    
-    this.salesOrders.push(newOrder)
-    return { ...newOrder }
+async create(orderData) {
+  await this.delay()
+  const maxId = Math.max(...this.salesOrders.map(o => o.Id), 0)
+  const maxOrderNumber = Math.max(
+    ...this.salesOrders.map(o => parseInt(o.orderId.split('-').pop())), 
+    0
+  )
+  
+  const newOrder = {
+    ...orderData,
+    Id: maxId + 1,
+    orderId: `SO-2024-${String(maxOrderNumber + 1).padStart(3, '0')}`,
+    status: "confirmed",
+    orderDate: new Date().toISOString().split('T')[0]
   }
+  
+  // Allocate batches and update stock
+  if (newOrder.items) {
+    const productService = (await import('@/services/api/productService')).default
+    
+    for (const item of newOrder.items) {
+      if (item.batchId) {
+        try {
+          await productService.allocateBatch(item.productId, item.batchId, item.quantity)
+        } catch (err) {
+          throw new Error(`Failed to allocate batch ${item.batchNumber}: ${err.message}`)
+        }
+      } else {
+        // Fallback to regular stock update if no batch specified
+        await productService.updateStock(item.productId, item.quantity, "subtract")
+      }
+    }
+  }
+  
+  this.salesOrders.push(newOrder)
+  return { ...newOrder }
+}
 
-  async update(id, orderData) {
-    await this.delay()
-    const index = this.salesOrders.findIndex(o => o.Id === parseInt(id))
-    if (index === -1) {
-      throw new Error("Sales order not found")
-    }
-    this.salesOrders[index] = { ...this.salesOrders[index], ...orderData }
-    return { ...this.salesOrders[index] }
+async update(id, orderData) {
+  await this.delay()
+  const index = this.salesOrders.findIndex(o => o.Id === parseInt(id))
+  if (index === -1) {
+    throw new Error("Sales order not found")
   }
+  this.salesOrders[index] = { ...this.salesOrders[index], ...orderData }
+  return { ...this.salesOrders[index] }
+}
 
   async updateStatus(id, status) {
     await this.delay()

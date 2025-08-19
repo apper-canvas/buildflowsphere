@@ -7,13 +7,14 @@ import { cn } from "@/utils/cn"
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation()
 
-  const navigation = [
+const navigation = [
     { name: "Dashboard", href: "/", icon: "LayoutDashboard" },
     { name: "Quotes", href: "/quotes", icon: "FileText" },
     { name: "Sales Orders", href: "/orders", icon: "ShoppingCart" },
     { name: "Inventory", href: "/inventory", icon: "Package" },
+    { name: "Batch Management", href: "/batch-management", icon: "Archive" },
     { name: "Dispatch", href: "/challans", icon: "Truck" },
-{ name: "Invoices", href: "/invoices", icon: "Receipt" },
+    { name: "Invoices", href: "/invoices", icon: "Receipt" },
     { name: "Purchase Orders", href: "/purchase-orders", icon: "Clipboard" },
     { name: "Customers", href: "/customers", icon: "Users" },
     { name: "Reports", href: "/reports", icon: "BarChart3" },

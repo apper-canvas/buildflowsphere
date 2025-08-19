@@ -17,7 +17,31 @@
     ],
     "brand": "UltraTech",
     "specifications": "53 Grade OPC Cement, IS:12269 Certified",
-    "status": "active"
+    "status": "active",
+    "batches": [
+      {
+        "Id": 1,
+        "batchNumber": "UT-OPC53-2024-001",
+        "manufacturingDate": "2024-01-15",
+        "expiryDate": "2025-01-15",
+        "quantity": 400,
+        "supplierName": "UltraTech Manufacturing",
+        "receivedDate": "2024-01-20",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Warehouse A-1"
+      },
+      {
+        "Id": 2,
+        "batchNumber": "UT-OPC53-2024-002",
+        "manufacturingDate": "2024-02-01",
+        "expiryDate": "2025-02-01",
+        "quantity": 450,
+        "supplierName": "UltraTech Manufacturing",
+        "receivedDate": "2024-02-05",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Warehouse A-2"
+      }
+    ]
   },
   {
     "Id": 2,
@@ -38,7 +62,31 @@
     ],
     "brand": "TATA Steel",
     "specifications": "Fe-500D Grade, 12mm diameter, IS:1786 Certified",
-    "status": "active"
+    "status": "active",
+    "batches": [
+      {
+        "Id": 3,
+        "batchNumber": "TATA-TMT12-2024-001",
+        "manufacturingDate": "2024-01-10",
+        "expiryDate": "2029-01-10",
+        "quantity": 600,
+        "supplierName": "TATA Steel Ltd",
+        "receivedDate": "2024-01-15",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Warehouse B-1"
+      },
+      {
+        "Id": 4,
+        "batchNumber": "TATA-TMT12-2024-002",
+        "manufacturingDate": "2024-02-15",
+        "expiryDate": "2029-02-15",
+        "quantity": 600,
+        "supplierName": "TATA Steel Ltd",
+        "receivedDate": "2024-02-20",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Warehouse B-2"
+      }
+    ]
   },
   {
     "Id": 3,
@@ -59,7 +107,31 @@
     ],
     "brand": "Local Supplier",
     "specifications": "Zone II Grade, Conforming to IS:383",
-    "status": "active"
+    "status": "active",
+    "batches": [
+      {
+        "Id": 5,
+        "batchNumber": "MSAND-2024-001",
+        "manufacturingDate": "2024-01-25",
+        "expiryDate": "2024-07-25",
+        "quantity": 75,
+        "supplierName": "Mumbai Aggregates",
+        "receivedDate": "2024-01-30",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Open Yard A"
+      },
+      {
+        "Id": 6,
+        "batchNumber": "MSAND-2024-002",
+        "manufacturingDate": "2024-02-10",
+        "expiryDate": "2024-08-10",
+        "quantity": 50,
+        "supplierName": "Mumbai Aggregates",
+        "receivedDate": "2024-02-15",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Open Yard B"
+      }
+    ]
   },
   {
     "Id": 4,
@@ -80,7 +152,31 @@
     ],
     "brand": "Quarry Direct",
     "specifications": "20mm Nominal Size, IS:383 Compliant",
-    "status": "active"
+    "status": "active",
+    "batches": [
+      {
+        "Id": 7,
+        "batchNumber": "AGG20-2024-001",
+        "manufacturingDate": "2024-01-20",
+        "expiryDate": "2024-07-20",
+        "quantity": 45,
+        "supplierName": "Maharashtra Quarries",
+        "receivedDate": "2024-01-25",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Open Yard C"
+      },
+      {
+        "Id": 8,
+        "batchNumber": "AGG20-2024-002",
+        "manufacturingDate": "2024-02-05",
+        "expiryDate": "2024-08-05",
+        "quantity": 40,
+        "supplierName": "Maharashtra Quarries",
+        "receivedDate": "2024-02-10",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Open Yard D"
+      }
+    ]
   },
   {
     "Id": 5,
@@ -100,7 +196,20 @@
     ],
     "brand": "ACC",
     "specifications": "PPC Grade, IS:1489 Part 1 Certified",
-    "status": "low_stock"
+    "status": "low_stock",
+    "batches": [
+      {
+        "Id": 9,
+        "batchNumber": "ACC-PPC-2024-001",
+        "manufacturingDate": "2024-01-08",
+        "expiryDate": "2025-01-08",
+        "quantity": 95,
+        "supplierName": "ACC Limited",
+        "receivedDate": "2024-01-12",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Warehouse A-3"
+      }
+    ]
   },
   {
     "Id": 6,
@@ -121,6 +230,30 @@
     ],
     "brand": "JSW Steel",
     "specifications": "Fe-500D Grade, 8mm diameter, IS:1786 Certified",
-    "status": "active"
+    "status": "active",
+    "batches": [
+      {
+        "Id": 10,
+        "batchNumber": "JSW-TMT8-2024-001",
+        "manufacturingDate": "2024-01-12",
+        "expiryDate": "2029-01-12",
+        "quantity": 900,
+        "supplierName": "JSW Steel Ltd",
+        "receivedDate": "2024-01-18",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Warehouse B-3"
+      },
+      {
+        "Id": 11,
+        "batchNumber": "JSW-TMT8-2024-002",
+        "manufacturingDate": "2024-02-20",
+        "expiryDate": "2029-02-20",
+        "quantity": 950,
+        "supplierName": "JSW Steel Ltd",
+        "receivedDate": "2024-02-25",
+        "qualityCheckStatus": "passed",
+        "storageLocation": "Warehouse B-4"
+      }
+    ]
   }
 ]

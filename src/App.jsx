@@ -8,12 +8,13 @@ import QuoteEdit from "@/components/pages/QuoteEdit"
 import OrderList from "@/components/pages/OrderList"
 import OrderDetails from "@/components/pages/OrderDetails"
 import Inventory from "@/components/pages/Inventory"
+import BatchManagement from "@/components/pages/BatchManagement"
 import ChallanList from "@/components/pages/ChallanList"
 import ChallanCreate from "@/components/pages/ChallanCreate"
 import InvoiceList from "@/components/pages/InvoiceList"
 import InvoiceCreate from '@/components/pages/InvoiceCreate'
 import CustomerList from '@/components/pages/CustomerList'
-import PurchaseOrderList from '@/components/pages/PurchaseOrderList'
+import PurchaseOrderList from '@/services/api/PurchaseOrderList'
 
 function App() {
   return (
@@ -26,12 +27,13 @@ function App() {
             <Route path="quotes/create" element={<QuoteCreate />} />
             <Route path="quotes/:id/edit" element={<QuoteEdit />} />
             <Route path="orders" element={<OrderList />} />
-            <Route path="orders/:id" element={<OrderDetails />} />
+<Route path="orders/:id" element={<OrderDetails />} />
             <Route path="inventory" element={<Inventory />} />
+            <Route path="batch-management" element={<BatchManagement />} />
             <Route path="challans" element={<ChallanList />} />
             <Route path="challans/create" element={<ChallanCreate />} />
-<Route path="invoices" element={<InvoiceList />} />
-<Route path="invoices/create" element={<InvoiceCreate />} />
+            <Route path="invoices" element={<InvoiceList />} />
+            <Route path="invoices/create" element={<InvoiceCreate />} />
             <Route path="purchase-orders" element={<PurchaseOrderList />} />
             <Route path="customers" element={<CustomerList />} />
           </Route>
